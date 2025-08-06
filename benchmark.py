@@ -8,7 +8,7 @@ import shutil
 
 # User inputs
 # Devices and hints
-devices = ["NPU"] #["CPU", "GPU", "NPU"]
+devices = ["CPU", "GPU", "NPU"]
 hints = ["latency"] #, "tput"]
 performance_counters_list = ['OFF']#, 'ON']
 nireq = -1
