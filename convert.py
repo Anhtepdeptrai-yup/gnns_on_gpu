@@ -3,6 +3,7 @@ import torch
 from torch_geometric.datasets import Planetoid
 import openvino as ov
 from pathlib import Path
+from model import GCN_pyT
 
 # Load model function
 def load_model(model_name, path, num_features, num_classes, data):
@@ -40,7 +41,7 @@ if __name__ == "__main__":
     print(model)
     
     # Convert model to OpenVINO format
-    ov_model = ov.convert_model(model, input=[("x", ov.Shape([data.num_nodes, dataset.num_features]), ov.Type.f32), ("edge_index", ov.Shape([2, data.edge_index.size(1)]), ov.Type.i64)])
+    ov_model = ov.convert_model(model, input=[("x", ov.Shape([data.num_nodes, dataset.num_features]), ov.Type.f32), ("edge_index", ov.Shape([2, data.edge_index.size(1)]), ov.Type.i32)])
 
     # Save the model as IR (xml and bin files)
     output_dir = Path("ov_model")

@@ -1,1 +1,4 @@
 filename,latency,throughput
+GCN_pyT_cora_fp16_CPU_hint_latency.txt,12.78,77.39
+GCN_pyT_cora_fp16_GPU_hint_latency.txt,18.04,54.94
+GCN_pyT_cora_fp16_NPU_hint_latency.txt,178.98,5.58

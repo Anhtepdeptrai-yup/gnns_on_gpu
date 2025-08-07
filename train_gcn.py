@@ -75,7 +75,7 @@ def save_model(model, path):
 # Main execution
 if __name__ == "__main__":
 
-    dataset_name = 'cora' # Can be 'cora', 'citeseer', or 'pubmed'
+    dataset_name = 'citeseer' # Can be 'cora', 'citeseer', or 'pubmed'
 
     # Load dataset
     if dataset_name == 'cora':

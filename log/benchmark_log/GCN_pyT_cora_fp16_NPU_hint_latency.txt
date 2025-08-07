@@ -12,11 +12,11 @@
 [Step 3/11] Setting device configuration
 [Step 4/11] Reading model files
 [ INFO ] Loading model files
-[ INFO ] Read model took 9.48 ms
+[ INFO ] Read model took 12.65 ms
 [ INFO ] Original model I/O parameters:
 [ INFO ] Model inputs:
 [ INFO ]     x (node: x) : f32 / [...] / [2708,1433]
-[ INFO ]     edge_index (node: edge_index) : i64 / [...] / [2,10556]
+[ INFO ]     edge_index (node: edge_index) : i32 / [...] / [2,10556]
 [ INFO ] Model outputs:
 [ INFO ]     z.1 (node: aten::linear/Add_1) : f32 / [...] / [2708,7]
 [Step 5/11] Resizing model to match image sizes and given batch
@@ -28,25 +28,36 @@
 [ INFO ] Model outputs:
 [ INFO ]     z.1 (node: aten::linear/Add_1.0) : f16 / [...] / [2708,7]
 [Step 7/11] Loading the model to the device
-[ ERROR ] Exception from src\inference\src\cpp\core.cpp:112:
-Exception from src\inference\src\dev\plugin.cpp:53:
-Exception from src\plugins\intel_npu\src\plugin\src\plugin.cpp:492:
-Exception from src\plugins\intel_npu\src\compiler_adapter\src\ze_graph_ext_wrappers.cpp:314:
-L0 pfnCreate2 result: ZE_RESULT_ERROR_INVALID_ARGUMENT, code 0x78000004 - generic error code for invalid arguments . 
-
-
-Traceback (most recent call last):
-  File "C:\Users\phamh\miniconda3\envs\gnn\Lib\site-packages\openvino\tools\benchmark\main.py", line 449, in main
-    compiled_model = benchmark.core.compile_model(model, benchmark.device, device_config)
-                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\phamh\miniconda3\envs\gnn\Lib\site-packages\openvino\_ov_api.py", line 599, in compile_model
-    super().compile_model(model, device_name, {} if config is None else config),
-    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-RuntimeError: Exception from src\inference\src\cpp\core.cpp:112:
-Exception from src\inference\src\dev\plugin.cpp:53:
-Exception from src\plugins\intel_npu\src\plugin\src\plugin.cpp:492:
-Exception from src\plugins\intel_npu\src\compiler_adapter\src\ze_graph_ext_wrappers.cpp:314:
-L0 pfnCreate2 result: ZE_RESULT_ERROR_INVALID_ARGUMENT, code 0x78000004 - generic error code for invalid arguments . 
-
-
-
+[ INFO ] Compile model took 62815.93 ms
+[Step 8/11] Querying optimal runtime parameters
+[ INFO ] Model:
+[ INFO ]   COMPILATION_NUM_THREADS: 14
+[ INFO ]   ENABLE_CPU_PINNING: False
+[ INFO ]   EXECUTION_DEVICES: NPU
+[ INFO ]   LOADED_FROM_CACHE: False
+[ INFO ]   LOG_LEVEL: Level.ERR
+[ INFO ]   MODEL_PRIORITY: Priority.MEDIUM
+[ INFO ]   NETWORK_NAME: Model2
+[ INFO ]   NPU_PLATFORM: 3720
+[ INFO ]   OPTIMAL_NUMBER_OF_INFER_REQUESTS: 1
+[ INFO ]   PERFORMANCE_HINT: PerformanceMode.LATENCY
+[ INFO ]   PERFORMANCE_HINT_NUM_REQUESTS: 1
+[ INFO ]   PERF_COUNT: False
+[Step 9/11] Creating infer requests and preparing input tensors
+[ WARNING ] No input files were given for input 'x'!. This input will be filled with random values!
+[ WARNING ] No input files were given for input 'edge_index'!. This input will be filled with random values!
+[ INFO ] Fill input 'x' with random values 
+[ INFO ] Fill input 'edge_index' with random values 
+[Step 10/11] Measuring performance (Start inference synchronously, limits: 30000 ms duration)
+[ INFO ] Benchmarking in inference only mode (inputs filling are not included in measurement loop).
+[ INFO ] First inference took 259.41 ms
+[Step 11/11] Dumping statistics report
+[ INFO ] Execution Devices:NPU
+[ INFO ] Count:            168 iterations
+[ INFO ] Duration:         30101.74 ms
+[ INFO ] Latency:
+[ INFO ]    Median:        177.30 ms
+[ INFO ]    Average:       178.98 ms
+[ INFO ]    Min:           166.87 ms
+[ INFO ]    Max:           201.64 ms
+[ INFO ] Throughput:   5.58 FPS

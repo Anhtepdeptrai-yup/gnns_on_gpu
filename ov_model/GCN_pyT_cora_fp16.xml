@@ -11,9 +11,9 @@
 			</output>
 		</layer>
 		<layer id="0" name="edge_index" type="Parameter" version="opset1">
-			<data shape="2,10556" element_type="i64" />
+			<data shape="2,10556" element_type="i32" />
 			<output>
-				<port id="0" precision="I64" names="edge_index">
+				<port id="0" precision="I32" names="edge_index">
 					<dim>2</dim>
 					<dim>10556</dim>
 				</port>
@@ -55,7 +55,7 @@
 		<layer id="5" name="aten::select/Gather" type="Gather" version="opset8">
 			<data batch_dims="0" />
 			<input>
-				<port id="0" precision="I64">
+				<port id="0" precision="I32">
 					<dim>2</dim>
 					<dim>10556</dim>
 				</port>
@@ -63,7 +63,7 @@
 				<port id="2" precision="I64" />
 			</input>
 			<output>
-				<port id="3" precision="I64" names="18">
+				<port id="3" precision="I32" names="18">
 					<dim>10556</dim>
 				</port>
 			</output>
@@ -77,7 +77,7 @@
 		<layer id="7" name="aten::select/Gather_1" type="Gather" version="opset8">
 			<data batch_dims="0" />
 			<input>
-				<port id="0" precision="I64">
+				<port id="0" precision="I32">
 					<dim>2</dim>
 					<dim>10556</dim>
 				</port>
@@ -85,7 +85,7 @@
 				<port id="2" precision="I64" />
 			</input>
 			<output>
-				<port id="3" precision="I64" names="19">
+				<port id="3" precision="I32" names="19">
 					<dim>10556</dim>
 				</port>
 			</output>
@@ -93,15 +93,15 @@
 		<layer id="8" name="aten::index_put_/Add" type="Add" version="opset1">
 			<data auto_broadcast="numpy" />
 			<input>
-				<port id="0" precision="I64">
+				<port id="0" precision="I32">
 					<dim>10556</dim>
 				</port>
-				<port id="1" precision="I64">
+				<port id="1" precision="I32">
 					<dim>10556</dim>
 				</port>
 			</input>
 			<output>
-				<port id="2" precision="I64">
+				<port id="2" precision="I32">
 					<dim>10556</dim>
 				</port>
 			</output>
@@ -109,7 +109,7 @@
 		<layer id="9" name="aten::index_put_/ShapeOf_0" type="ShapeOf" version="opset3">
 			<data output_type="i32" />
 			<input>
-				<port id="0" precision="I64">
+				<port id="0" precision="I32">
 					<dim>10556</dim>
 				</port>
 			</input>
@@ -122,7 +122,7 @@
 		<layer id="10" name="aten::index_put_/Broadcast" type="Broadcast" version="opset3">
 			<data mode="numpy" />
 			<input>
-				<port id="0" precision="I64">
+				<port id="0" precision="I32">
 					<dim>10556</dim>
 				</port>
 				<port id="1" precision="I32">
@@ -130,7 +130,7 @@
 				</port>
 			</input>
 			<output>
-				<port id="2" precision="I64">
+				<port id="2" precision="I32">
 					<dim>10556</dim>
 				</port>
 			</output>
@@ -143,22 +143,22 @@
 		</layer>
 		<layer id="12" name="aten::index_put_/Unsqueeze" type="Unsqueeze" version="opset1">
 			<input>
-				<port id="0" precision="I64">
+				<port id="0" precision="I32">
 					<dim>10556</dim>
 				</port>
 				<port id="1" precision="I32" />
 			</input>
 			<output>
-				<port id="2" precision="I64">
+				<port id="2" precision="I32">
 					<dim>10556</dim>
 					<dim>1</dim>
 				</port>
 			</output>
 		</layer>
-		<layer id="13" name="Constant_2521" type="Const" version="opset1">
-			<data element_type="i64" shape="1, 1" offset="14666548" size="8" />
+		<layer id="13" name="Constant_2519" type="Const" version="opset1">
+			<data element_type="i32" shape="1, 1" offset="14666548" size="4" />
 			<output>
-				<port id="0" precision="I64">
+				<port id="0" precision="I32">
 					<dim>1</dim>
 					<dim>1</dim>
 				</port>
@@ -167,26 +167,26 @@
 		<layer id="14" name="aten::index_put_/Add_1" type="Add" version="opset1">
 			<data auto_broadcast="numpy" />
 			<input>
-				<port id="0" precision="I64">
+				<port id="0" precision="I32">
 					<dim>10556</dim>
 					<dim>1</dim>
 				</port>
-				<port id="1" precision="I64">
+				<port id="1" precision="I32">
 					<dim>1</dim>
 					<dim>1</dim>
 				</port>
 			</input>
 			<output>
-				<port id="2" precision="I64">
+				<port id="2" precision="I32">
 					<dim>10556</dim>
 					<dim>1</dim>
 				</port>
 			</output>
 		</layer>
-		<layer id="15" name="Constant_2522" type="Const" version="opset1">
-			<data element_type="i64" shape="1, 1" offset="14666548" size="8" />
+		<layer id="15" name="Constant_2520" type="Const" version="opset1">
+			<data element_type="i32" shape="1, 1" offset="14666548" size="4" />
 			<output>
-				<port id="0" precision="I64">
+				<port id="0" precision="I32">
 					<dim>1</dim>
 					<dim>1</dim>
 				</port>
@@ -195,17 +195,17 @@
 		<layer id="16" name="aten::index_put_/Mod" type="Mod" version="opset1">
 			<data auto_broadcast="numpy" />
 			<input>
-				<port id="0" precision="I64">
+				<port id="0" precision="I32">
 					<dim>10556</dim>
 					<dim>1</dim>
 				</port>
-				<port id="1" precision="I64">
+				<port id="1" precision="I32">
 					<dim>1</dim>
 					<dim>1</dim>
 				</port>
 			</input>
 			<output>
-				<port id="2" precision="I64">
+				<port id="2" precision="I32">
 					<dim>10556</dim>
 					<dim>1</dim>
 				</port>
@@ -214,7 +214,7 @@
 		<layer id="17" name="aten::index_put_/Broadcast_2" type="Broadcast" version="opset3">
 			<data mode="numpy" />
 			<input>
-				<port id="0" precision="I64">
+				<port id="0" precision="I32">
 					<dim>10556</dim>
 				</port>
 				<port id="1" precision="I32">
@@ -222,29 +222,29 @@
 				</port>
 			</input>
 			<output>
-				<port id="2" precision="I64">
+				<port id="2" precision="I32">
 					<dim>10556</dim>
 				</port>
 			</output>
 		</layer>
 		<layer id="18" name="aten::index_put_/Unsqueeze_3" type="Unsqueeze" version="opset1">
 			<input>
-				<port id="0" precision="I64">
+				<port id="0" precision="I32">
 					<dim>10556</dim>
 				</port>
 				<port id="1" precision="I32" />
 			</input>
 			<output>
-				<port id="2" precision="I64">
+				<port id="2" precision="I32">
 					<dim>10556</dim>
 					<dim>1</dim>
 				</port>
 			</output>
 		</layer>
-		<layer id="19" name="Constant_2523" type="Const" version="opset1">
-			<data element_type="i64" shape="1, 1" offset="14666548" size="8" />
+		<layer id="19" name="Constant_2521" type="Const" version="opset1">
+			<data element_type="i32" shape="1, 1" offset="14666548" size="4" />
 			<output>
-				<port id="0" precision="I64">
+				<port id="0" precision="I32">
 					<dim>1</dim>
 					<dim>1</dim>
 				</port>
@@ -253,26 +253,26 @@
 		<layer id="20" name="aten::index_put_/Add_6" type="Add" version="opset1">
 			<data auto_broadcast="numpy" />
 			<input>
-				<port id="0" precision="I64">
+				<port id="0" precision="I32">
 					<dim>10556</dim>
 					<dim>1</dim>
 				</port>
-				<port id="1" precision="I64">
+				<port id="1" precision="I32">
 					<dim>1</dim>
 					<dim>1</dim>
 				</port>
 			</input>
 			<output>
-				<port id="2" precision="I64">
+				<port id="2" precision="I32">
 					<dim>10556</dim>
 					<dim>1</dim>
 				</port>
 			</output>
 		</layer>
-		<layer id="21" name="Constant_2524" type="Const" version="opset1">
-			<data element_type="i64" shape="1, 1" offset="14666548" size="8" />
+		<layer id="21" name="Constant_2522" type="Const" version="opset1">
+			<data element_type="i32" shape="1, 1" offset="14666548" size="4" />
 			<output>
-				<port id="0" precision="I64">
+				<port id="0" precision="I32">
 					<dim>1</dim>
 					<dim>1</dim>
 				</port>
@@ -281,17 +281,17 @@
 		<layer id="22" name="aten::index_put_/Mod_7" type="Mod" version="opset1">
 			<data auto_broadcast="numpy" />
 			<input>
-				<port id="0" precision="I64">
+				<port id="0" precision="I32">
 					<dim>10556</dim>
 					<dim>1</dim>
 				</port>
-				<port id="1" precision="I64">
+				<port id="1" precision="I32">
 					<dim>1</dim>
 					<dim>1</dim>
 				</port>
 			</input>
 			<output>
-				<port id="2" precision="I64">
+				<port id="2" precision="I32">
 					<dim>10556</dim>
 					<dim>1</dim>
 				</port>
@@ -300,24 +300,24 @@
 		<layer id="23" name="aten::index_put_/Concat" type="Concat" version="opset1">
 			<data axis="-1" />
 			<input>
-				<port id="0" precision="I64">
+				<port id="0" precision="I32">
 					<dim>10556</dim>
 					<dim>1</dim>
 				</port>
-				<port id="1" precision="I64">
+				<port id="1" precision="I32">
 					<dim>10556</dim>
 					<dim>1</dim>
 				</port>
 			</input>
 			<output>
-				<port id="2" precision="I64">
+				<port id="2" precision="I32">
 					<dim>10556</dim>
 					<dim>2</dim>
 				</port>
 			</output>
 		</layer>
 		<layer id="24" name="aten::tensor/ConvertLike_compressed" type="Const" version="opset1">
-			<data element_type="f16" shape="" offset="14666556" size="2" />
+			<data element_type="f16" shape="" offset="14666552" size="2" />
 			<output>
 				<port id="0" precision="FP16" names="22" />
 			</output>
@@ -354,7 +354,7 @@
 					<dim>2708</dim>
 					<dim>2708</dim>
 				</port>
-				<port id="1" precision="I64">
+				<port id="1" precision="I32">
 					<dim>10556</dim>
 					<dim>2</dim>
 				</port>
@@ -369,7 +369,7 @@
 				</port>
 			</output>
 		</layer>
-		<layer id="28" name="ShapeOf_2557" type="ShapeOf" version="opset3">
+		<layer id="28" name="ShapeOf_2555" type="ShapeOf" version="opset3">
 			<data output_type="i64" />
 			<input>
 				<port id="0" precision="FP32">
@@ -383,19 +383,19 @@
 				</port>
 			</output>
 		</layer>
-		<layer id="29" name="Constant_2558" type="Const" version="opset1">
+		<layer id="29" name="Constant_2556" type="Const" version="opset1">
 			<data element_type="i64" shape="" offset="14666528" size="8" />
 			<output>
 				<port id="0" precision="I64" />
 			</output>
 		</layer>
-		<layer id="30" name="Constant_2559" type="Const" version="opset1">
+		<layer id="30" name="Constant_2557" type="Const" version="opset1">
 			<data element_type="i64" shape="" offset="14666528" size="8" />
 			<output>
 				<port id="0" precision="I64" />
 			</output>
 		</layer>
-		<layer id="31" name="Gather_2560" type="Gather" version="opset8">
+		<layer id="31" name="Gather_2558" type="Gather" version="opset8">
 			<data batch_dims="0" />
 			<input>
 				<port id="0" precision="I64">
@@ -408,7 +408,7 @@
 				<port id="3" precision="I64" names="14,num_nodes.1" />
 			</output>
 		</layer>
-		<layer id="32" name="Convert_2561" type="Convert" version="opset1">
+		<layer id="32" name="Convert_2559" type="Convert" version="opset1">
 			<data destination_type="i32" />
 			<input>
 				<port id="0" precision="I64" />
@@ -418,7 +418,7 @@
 			</output>
 		</layer>
 		<layer id="33" name="aten::eye/Constant" type="Const" version="opset1">
-			<data element_type="i32" shape="" offset="14666558" size="4" />
+			<data element_type="i32" shape="" offset="14666554" size="4" />
 			<output>
 				<port id="0" precision="I32" />
 			</output>
@@ -497,8 +497,8 @@
 				</port>
 			</output>
 		</layer>
-		<layer id="39" name="Constant_2525_compressed" type="Const" version="opset1">
-			<data element_type="f16" shape="1, 1" offset="14666562" size="2" />
+		<layer id="39" name="Constant_2523_compressed" type="Const" version="opset1">
+			<data element_type="f16" shape="1, 1" offset="14666558" size="2" />
 			<output>
 				<port id="0" precision="FP16">
 					<dim>1</dim>
@@ -506,7 +506,7 @@
 				</port>
 			</output>
 		</layer>
-		<layer id="40" name="Constant_2525" type="Convert" version="opset1">
+		<layer id="40" name="Constant_2523" type="Convert" version="opset1">
 			<data destination_type="f32" />
 			<rt_info>
 				<attribute name="decompression" version="0" />
@@ -543,8 +543,8 @@
 				</port>
 			</output>
 		</layer>
-		<layer id="42" name="Constant_2526_compressed" type="Const" version="opset1">
-			<data element_type="f16" shape="1, 1" offset="14666564" size="2" />
+		<layer id="42" name="Constant_2524_compressed" type="Const" version="opset1">
+			<data element_type="f16" shape="1, 1" offset="14666560" size="2" />
 			<output>
 				<port id="0" precision="FP16">
 					<dim>1</dim>
@@ -552,7 +552,7 @@
 				</port>
 			</output>
 		</layer>
-		<layer id="43" name="Constant_2526" type="Convert" version="opset1">
+		<layer id="43" name="Constant_2524" type="Convert" version="opset1">
 			<data destination_type="f32" />
 			<rt_info>
 				<attribute name="decompression" version="0" />
@@ -590,7 +590,7 @@
 			</output>
 		</layer>
 		<layer id="45" name="aten::zeros_like/Constant_compressed" type="Const" version="opset1">
-			<data element_type="f16" shape="" offset="14666562" size="2" />
+			<data element_type="f16" shape="" offset="14666558" size="2" />
 			<output>
 				<port id="0" precision="FP16" />
 			</output>
@@ -660,7 +660,7 @@
 			</output>
 		</layer>
 		<layer id="50" name="aten::t/Equal" type="Const" version="opset1">
-			<data element_type="boolean" shape="" offset="14666566" size="1" />
+			<data element_type="boolean" shape="" offset="14666562" size="1" />
 			<output>
 				<port id="0" precision="BOOL" />
 			</output>
@@ -698,8 +698,8 @@
 							</port>
 						</output>
 					</layer>
-					<layer id="1" name="Constant_2459" type="Const" version="opset1">
-						<data element_type="i64" shape="2" offset="14666567" size="16" />
+					<layer id="1" name="Constant_2457" type="Const" version="opset1">
+						<data element_type="i64" shape="2" offset="14666563" size="16" />
 						<rt_info>
 							<attribute name="precise" version="0" />
 						</rt_info>
@@ -808,7 +808,7 @@
 			</output>
 		</layer>
 		<layer id="54" name="Constant_18_compressed" type="Const" version="opset1">
-			<data element_type="f16" shape="64, 1433" offset="14666583" size="183424" />
+			<data element_type="f16" shape="64, 1433" offset="14666579" size="183424" />
 			<output>
 				<port id="0" precision="FP16" names="13,self.gcn.linear.weight">
 					<dim>64</dim>
@@ -853,8 +853,8 @@
 				</port>
 			</output>
 		</layer>
-		<layer id="57" name="Constant_2527_compressed" type="Const" version="opset1">
-			<data element_type="f16" shape="1, 64" offset="14850007" size="128" />
+		<layer id="57" name="Constant_2525_compressed" type="Const" version="opset1">
+			<data element_type="f16" shape="1, 64" offset="14850003" size="128" />
 			<output>
 				<port id="0" precision="FP16">
 					<dim>1</dim>
@@ -862,7 +862,7 @@
 				</port>
 			</output>
 		</layer>
-		<layer id="58" name="Constant_2527" type="Convert" version="opset1">
+		<layer id="58" name="Constant_2525" type="Convert" version="opset1">
 			<data destination_type="f32" />
 			<rt_info>
 				<attribute name="decompression" version="0" />
@@ -933,7 +933,7 @@
 			</output>
 		</layer>
 		<layer id="62" name="Constant_14_compressed" type="Const" version="opset1">
-			<data element_type="f16" shape="7, 64" offset="14850135" size="896" />
+			<data element_type="f16" shape="7, 64" offset="14850131" size="896" />
 			<output>
 				<port id="0" precision="FP16" names="11,self.out.weight">
 					<dim>7</dim>
@@ -978,8 +978,8 @@
 				</port>
 			</output>
 		</layer>
-		<layer id="65" name="Constant_2528_compressed" type="Const" version="opset1">
-			<data element_type="f16" shape="1, 7" offset="14851031" size="14" />
+		<layer id="65" name="Constant_2526_compressed" type="Const" version="opset1">
+			<data element_type="f16" shape="1, 7" offset="14851027" size="14" />
 			<output>
 				<port id="0" precision="FP16">
 					<dim>1</dim>
@@ -987,7 +987,7 @@
 				</port>
 			</output>
 		</layer>
-		<layer id="66" name="Constant_2528" type="Convert" version="opset1">
+		<layer id="66" name="Constant_2526" type="Convert" version="opset1">
 			<data destination_type="f32" />
 			<rt_info>
 				<attribute name="decompression" version="0" />
